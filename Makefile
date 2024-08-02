@@ -34,6 +34,10 @@ gcr-login:
 docker-build:
 	docker build -t flask-gcp-docker $(PLATFORM_PARAM) .
 
+.PHONY: docker-run
+docker-run:
+	docker run -p 8080:8080 flask-gcp-docker
+
 .PHONY: docker-push
 docker-push: gcr-login docker-build
 	docker tag flask-gcp-docker gcr.io/$(PROJECT_ID)/flask-gcp-docker
