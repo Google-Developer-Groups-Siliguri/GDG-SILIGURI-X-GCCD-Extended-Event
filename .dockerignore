@@ -1,0 +1,7 @@
+.git
+venv/
+terraform/
+.gitignore
+.dockerignore
+.install
+Dockerfile
